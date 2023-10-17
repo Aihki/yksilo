@@ -1,0 +1,518 @@
+@font-face {
+  font-family: Poppins;
+  src: url(./fonts/Poppins/Poppins-Light.ttf);
+}
+
+@font-face {
+  font-family: Poppins-title;
+  src: url(./fonts/Poppins/Poppins-Light.ttf);
+}
+
+@font-face {
+  font-family: Poppins-bold;
+  src: url(./fonts/Poppins/Poppins-Bold.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+  --background-light: #ecdada;
+  --text-light: #333333;
+  --closest-light: #053F63;
+  --navi-light: #000757;
+
+
+  --background-dark: #333333;
+  --text-dark: #F5F5F5;
+  --closest-dark: #0D8C71;
+  --navi-dark: #F5F5F5;
+}
+
+body {
+  background-color: var(--background-light);
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+/* dark mode */
+body.dark {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.closest.dark {
+  background-color: var(--closest-dark);
+}
+
+body.dark h1 {
+  color: var(--text-dark);
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+.edit-grid.dark {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  padding: 20px;
+  background-color: var(--background-dark);
+}
+
+#menuDialog.dark {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+#menuDialog.dark table {
+  font-size: 1em;
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+  border-collapse: collapse;
+}
+
+#menuDialog.dark table th {
+  background-color: var(--closest-dark);
+  color: white;
+}
+
+#menuDialog.dark table td {
+  border: 1px solid var(--navi-dark);
+  padding: 8px;
+  white-space: pre-wrap;
+}
+
+/* *********** */
+/* nav {} */
+#navi {
+  background-color: var(--navi-light);
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Searchbar {
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  box-shadow: 0.25em 0.25em 0.5em rgba(0, 0, 0, 0.25);
+}
+
+
+#searchInput {
+  margin: 0 0.5em 0 0.5em;
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 50px;
+
+}
+
+
+button {
+  display: inline-block;
+  padding: 0.46em 1.6em;
+  border: 0.1em solid #000000;
+  margin: 0 0.2em 0;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 100;
+  color: #000000;
+  text-align: center;
+  transition: all 0.10s;
+}
+
+button:hover {
+  color: #ffffffff;
+  border-color: #ffffffff;
+
+}
+
+.top {
+  background-color: var(--navi-light);
+  color: var(--text-dark);
+}
+
+
+#menuButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+}
+
+#menuButtons button {
+  display: inline-block;
+  padding: 0.46em 1.6em;
+  border: 0.1em solid #000000;
+  margin: 0 0.2em 0;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 100;
+  color: #000000;
+  text-align: center;
+  transition: all 0.10s;
+}
+
+#menuButtons button:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.edit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  padding: 20px;
+  background-color: var(--background-light);
+}
+
+.profile-container {
+  display: grid;
+  justify-content: space-around;
+}
+
+.profile {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 17px;
+  padding: 15px;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hover_img {
+  width: 164px;
+  height: 145px;
+  position: absolute;
+  top: -73px;
+  right: 203px;
+}
+
+.cardContainer {
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+
+.cardimg {
+  width: 100%;
+  display: block;
+  border-radius: 20px 20px 0 0;
+}
+
+.cardDetails {
+  padding: 20px 10px;
+}
+
+.edit-profile {
+  border: solid;
+  padding: 15px;
+  border-radius: 17px;
+}
+
+.upload-avatar {
+  border: solid;
+  padding: 15px;
+  border-radius: 17px;
+}
+
+.restaurant-table {
+  display: block;
+}
+
+.profile-edit {
+  display: none;
+  padding: 20px;
+
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+
+img#avatar-target {
+  max-width: 45px;
+  height: auto;
+  border-radius: 21px;
+  border: solid 2px;
+  border-color: white;
+}
+
+.table-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: auto;
+  padding: 0;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+th {
+  background-color: var(--background-light);
+  border-bottom: 1px solid #ccc;
+  font-weight: normal;
+  padding: 0.5em 1em;
+  text-align: left;
+}
+
+td {
+  border-bottom: 1px solid #ccc;
+  padding: 0.5em 1em;
+  white-space: pre-line;
+}
+
+.closest {
+  font-family: Poppins-bold;
+  background-color: var(--closest-light);
+  color: var(--text-dark);
+}
+
+
+
+#open_dialog {
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Form style */
+/* #reqdialog:not([open]),
+#logdialog:not([open]) {
+  display: none;
+}
+ */
+
+#reqdialog,
+#logdialog {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--text-light);
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 8px;
+  width: 520px;
+}
+
+
+
+.flex-space-between {
+  gap: 10px
+}
+
+#reqdialog::backdrop,
+#logdialog::backdrop {
+  backdrop-filter: blur(1px);
+}
+
+.regform input,
+.logform input {
+  width: 100%;
+  padding: 12px 0;
+  margin: 8px 0;
+  background-color: var(--background-light);
+  transition: border-color 2s;
+  border: 1px solid black;
+  border-left: 10px solid black;
+}
+
+input[type='submit'] {
+  display: inline-block;
+  padding: 0.46em 1.6em;
+  border: 0.1em solid #000000;
+  margin: 0 0.2em 0;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 100;
+  color: var(--text-light);
+  text-align: center;
+  transition: all 0.10s;
+}
+
+
+.regform input:invalid,
+.logform input:invalid {
+  border-left-color: red;
+}
+
+.regform input:valid,
+.logform input:valid {
+  border-left-color: rgb(16, 251, 8);
+}
+
+label {
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.text-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.text-link:hover {
+  color: darkblue;
+  text-decoration: none;
+}
+
+#menuDialog {
+  background-color: var(--background-light);
+}
+
+#menuDialog table {
+  font-size: 1em;
+  background-color: var(--background-light);
+  color: var(--text-light);
+  border-collapse: collapse;
+}
+
+#menuDialog table th {
+  background-color: var(--closest-light);
+  color: white;
+}
+
+#menuDialog table td {
+  border: 1px solid var(--navi-light);
+  padding: 8px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+  .edit-grid,
+  .edit-grid.dark {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 10px;
+  }
+
+  .search-txt {
+    margin: 10px 0;
+    margin-right: 5px;
+  }
+
+  input#profile-username {
+    width: 75%;
+  }
+
+  input#profile-email {
+    width: 75%;
+  }
+
+
+  #menuDialog table {
+    font-size: 0.60em;
+  }
+
+  #menuDialog.dark table {
+    font-size: 0.60em;
+  }
+}
+
+@media screen and (max-width: 455px) {
+
+  table {
+    font-size: 0.90em;
+  }
+
+}
+
+@media screen and (max-width: 280px) {
+
+  .edit-grid,
+  .edit-grid.dark {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 10px;
+  }
+
+  #menuDialog {
+    font-size: 0.70em;
+  }
+}

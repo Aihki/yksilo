@@ -1,0 +1,60 @@
+/*  const createTable = (restaurants : Restaurant[]) => {
+    const table = document.querySelector('table');
+  if (!table){
+    throw new Error('table doesn\'t  exist')
+  }
+  const rows = table.querySelectorAll('tr:not(:first-child)');
+  rows.forEach(row => row.remove());
+
+  restaurants.forEach((restaurant, index) => {
+    const tr = restaurantRow(restaurant);
+
+    if (index === 0) {
+      tr.classList.add('highlight');
+    }
+    if (table) {
+      table.appendChild(tr);
+    }
+  const weeklyButton = document.querySelector(`#weekly_${restaurant._id}`) as HTMLButtonElement;
+  if (weeklyButton)
+        weeklyButton.addEventListener('click', async () => {
+          try {
+            const weekly = await fetchData<WeeklyMenu>(
+              apiUrl + `/restaurants/weekly/${restaurant._id}/fi`
+            );
+            modal.innerHTML = '';
+            const weeklyMenu = weeklyModal(restaurant, weekly);
+            modal.insertAdjacentHTML('beforeend', weeklyMenu);
+            modal.showModal();
+          } catch (error) {
+            modal.innerHTML = errorModal((error as Error).message);
+            modal.showModal();
+          }
+        });
+
+   const daily = document.querySelector(`#daily_${restaurant._id}`)as HTMLButtonElement;
+    if (daily)
+      daily.addEventListener('click', async () => {
+        try {
+          const daily = await fetchData<DailyMenu>(
+            apiUrl + `/restaurants/daily/${restaurant._id}/fi`
+          );
+          modal.innerHTML = '';
+          const dailyMenu = dailyModal(restaurant, daily);
+          modal.insertAdjacentHTML('beforeend', dailyMenu);
+          modal.showModal();
+        } catch (error) {
+          modal.innerHTML = errorModal((error as Error).message);
+          modal.showModal();
+        }
+      });
+      });
+  };
+ */
+
+/* const calculateDistance = (lat1 :number, lon1: number, lat2 :number, lon2: number) =>
+  Math.sqrt((lat2 - lat1) ** 2 + (lon2 - lon1) ** 2);
+ */
+
+
+

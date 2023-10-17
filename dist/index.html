@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="./app-icon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <meta name="description" content="Yksilo Vite PWA" />
+  <link rel="apple-touch-icon" href="./icons/icon-192x192.png" sizes="192x192" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  
+  <script src="https://kit.fontawesome.com/b4b9814ab0.js" crossorigin="anonymous"></script>
+  
+
+  <script type="module" crossorigin src="./assets/index-40261026.js"></script>
+  <link rel="stylesheet" href="./assets/index-95350ae9.css">
+<link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
+
+<body>
+
+  <nav id="navi">
+    <div>
+      <input type="checkbox" class="checkbox" id="checkbox">
+      <label for="checkbox" class="checkbox-label">
+        <i class="fa-solid fa-moon"></i>
+        <i class="fa-solid fa-sun"></i>
+        <span class="ball"></span>
+      </label>
+    </div>
+    <button id="open_regdialog"><i class="fa-regular fa-id-card"></i></button>
+    <button id="open_logdialog"><i class="fa-solid fa-right-to-bracket"></i></button>
+    <img id="avatar-target" src="" alt="Avatar">
+  </nav>
+
+
+
+
+  <div class="Searchbar">
+    <input type="text" id="searchInput" placeholder="Search restaurant" />
+  </div>
+
+
+  <div id="menuButtons">
+    <button id="weekly_menu">Weekly</button>
+    <button id="daily_menu">Daily</button>
+  </div>
+
+
+  <section class="restaurant-table">
+    <table>
+      <tr>
+        <th class="top">Name</th>
+        <th class="top">Address</th>
+      </tr>
+    </table>
+  </section>
+
+  <section class="profile-edit">
+    <div class="profile-container">
+      <div class="profile">
+        <img src="./assets/crown-6f9b800e.webp" class="hover_img" alt="picture of crown" />
+        <div class="cardContainer">
+          <img class="cardimg" src="./assets/lake-7ff66831.jpeg" alt="some lake" />
+        </div>
+        <div class="cardDetails">
+          <h2>Profile</h2>
+          <p>Username: <span id="username-target"></span></p>
+          <p>Email: <span id="email-target"></span></p>
+        </div>
+      </div>
+    </div>
+    <div class="edit-grid">
+      <div class="edit-profile">
+        <h2>Edit profile</h2>
+        <form id="profile-form">
+          <div class="form-control">
+            <input id="profile-username" type="text" name="username" />
+            <label for="profile-username">Username</label>
+          </div>
+          <div class="form-control">
+            <input id="profile-email" type="email" name="email" />
+            <label for="profile-email">Email</label>
+          </div>
+          <div class="form-control">
+            <input type="submit" value="Update" class="button" />
+          </div>
+        </form>
+      </div>
+
+      <div class="upload-avatar">
+        <h2>Upload avatar</h2>
+        <form id="avatar-form">
+          <div class="form-control">
+            <input id="avatar" type="file" name="avatar" />
+            <label for="avatar">Choose image</label>
+          </div>
+          <div class="form-control">
+            <input type="submit" value="Upload" class="button" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <dialog id="menuDialog">
+  </dialog>
+  <dialog id="reqdialog">
+    <h2 id="dialog_title" class="h2">Rekisteröidy tiedoillasi</h2>
+
+    <div id="register">
+      <form class="regform" id="reg-form">
+        <label for="reg-username">Name</label>
+        <input type="text" id="reg-username" autocomplete="name" name="username" placeholder="Your name.." minlength="3"
+          required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="nestori@metropolia.fi" pattern=".+@metropolia\.fi"
+          required />
+
+        <label for="reg-password">Password</label>
+        <input type="password" id="reg-password" name="password" placeholder="Password.." minlength="10" required />
+        <div class="flex flex-space-between">
+          <button type="button" id="close_reg">Close</button>
+          <button type="submit"> Submit</button>
+        </div>
+    </div>
+    </form>
+
+
+
+  </dialog>
+  <dialog id="logdialog">
+    <h2 id="dialog_title2" class="h2">Kirjaudu sisään</h2>
+    <div id="login">
+      <form class="logform" id="login-form">
+        <label for="log-username">Name</label>
+        <input type="text" id="log-username" autocomplete="name" name="username" placeholder="Your name.." minlength="3"
+          required />
+
+        <label for="log-password">Password</label>
+        <input type="password" id="log-password" name="password" placeholder="Password.." minlength="10" required />
+        <div class="flex flex-space-between">
+          <button type="button" id="close_log">Close</button>
+          <button type="submit"> Login</button>
+        </div>
+    </div>
+    </form>
+  </dialog>
+
+</body>
+
+</html>
